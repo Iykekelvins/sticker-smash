@@ -1,13 +1,20 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { Link } from 'expo-router';
+import { Text, View, StyleSheet, Image } from 'react-native';
+
+import Button from '@/components/Button';
+import ImageViewer from '@/components/ImageViewer';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
 
 export default function Index() {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.text}>Home screen</Text>
-			<Link href='/about' style={styles.button}>
-				Go to About screen
-			</Link>
+			<View style={styles.imageContainer}>
+				<ImageViewer imgSource={PlaceholderImage} />
+			</View>
+			<View style={styles.footerContainer}>
+				<Button label='Choose a photo' theme='primary' />
+				<Button label='Use this photo' />
+			</View>
 		</View>
 	);
 }
@@ -16,15 +23,15 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-		justifyContent: 'center',
 		backgroundColor: '#25292e',
+		justifyContent: 'center',
 	},
-	text: {
-		color: '#fff',
+	imageContainer: {
+		flex: 1,
+		paddingTop: 28,
 	},
-	button: {
-		fontSize: 20,
-		textDecorationLine: 'underline',
-		color: '#fff',
+	footerContainer: {
+		flex: 1 / 10,
+		alignItems: 'center',
 	},
 });

@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Button from '@/components/Button';
 import ImageViewer from '@/components/ImageViewer';
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 		paddingTop: 28,
 	},
 	footerContainer: {
-		flex: 1 / 10,
+		flex: 1 / 7,
 		alignItems: 'center',
 	},
 });
